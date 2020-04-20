@@ -31,8 +31,7 @@ def send_email( subj, body ):
 
     print("Sending email...")
     #server = smtplib.SMTP(smtp_host, smtp_port)
-    server = smtplib.SMTP()
-    server.connect('smtp-mail.outlook.com', '587')
+    server = smtplib.SMTP('smtp-mail.outlook.com', 587)
     server.starttls()
     server.login(smtp_user, smtp_pass)
     server.sendmail(mail_from, mail_to, msg.as_string())
